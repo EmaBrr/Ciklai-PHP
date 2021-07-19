@@ -17,7 +17,7 @@
 echo "<h3>Pirma užduotis a)</h3>";
 
 echo "<p>";
-for ($i = 0; $i < 401 ; $i++) {
+for ($i = 0; $i < 400 ; $i++) {
     echo "*";
 };
 echo "</p>";
@@ -25,8 +25,8 @@ echo "</p>";
 //  b) Programiškai “suskaldykite” žvaigždutes taip, kad vienoje eilutėje nebūtų daugiau nei 50 “*”; 
 echo "<h3>Pirma užduotis b)</h3>";
 
-for ($i=0; $i < 5; $i++) { 
-    for ($j = 0; $j < 51 ; $j++) {
+for ($i=0; $i < 8; $i++) { 
+    for ($j = 0; $j < 50 ; $j++) {
     echo "<span>*</span>";
     };
     echo "<br>";
@@ -38,7 +38,7 @@ echo "<h3>Antra užduotis</h3>";
 
 $counter = 0;
 
-for ($i=0; $i < 301; $i++) { 
+for ($i=0; $i < 300; $i++) { 
     $random = rand(0, 300);
     if ($random > 150) {
         $counter = $counter + 1;
@@ -64,20 +64,27 @@ echo "$atsitiktinis_skaicius";
 echo "<br>";
 echo "<br>";
 
-for ($i=0; $i < $atsitiktinis_skaicius + 1; $i++) { 
-    $temp = round($i / 77, 0);
-    $temp2 = $i - (77*$temp);
+for ($i=0; $i < $atsitiktinis_skaicius; $i++) { 
+    $temp = floor($i / 77);
+    $temp2 = $i - (77 * $temp);
+    $temp3 = floor($atsitiktinis_skaicius / 77);
+    $temp4 = 77 * $temp3;
 
-   if ($i != 0 && $temp2 == 0) {
-      echo "$i ";
+   if ($i != 0 && $temp2 == 0 && $i != $temp4) {
+      echo "$i, ";
    };
+
+   if ($i == $temp4) {
+    echo "$i. ";
+   };
+
 };
 
 // 4. Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”. Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis.
 echo "<h3>Ketvirta užduotis</h3>";
 echo "<div class = 'kvadratas'>";
-for ($i=0; $i < 101; $i++) { 
-    for ($j = 0; $j < 101 ; $j++) {
+for ($i=0; $i < 100; $i++) { 
+    for ($j = 0; $j < 100 ; $j++) {
     echo "<span class = 'kvadrato__span'>*</span>";
     };
     echo "<br>";
@@ -88,8 +95,8 @@ echo "</div>";
 echo "<h3>Penkta užduotis</h3>";
 
 echo "<div class = 'kvadratas'>";
-for ($i=0; $i < 21; $i++) { 
-    for ($j = 0; $j < 21 ; $j++) {
+for ($i=0; $i < 20; $i++) { 
+    for ($j = 0; $j < 20 ; $j++) {
         echo "<span class = 'kvadrato__span'>*</span>";
     };
     echo "<br>";
@@ -105,7 +112,7 @@ echo "<h3>Šešta užduotis</h3>";
 $S = 0;
 $H = 0;
 
-for ($i=0; $i < 101; $i++) { 
+for ($i=0; $i < 100; $i++) { 
     $metimas = rand(0, 1);
     echo "$metimas";
     echo "<br>";
@@ -127,7 +134,7 @@ echo "<br>";
 $S1 = 0;
 $H1 = 0;
 
-for ($i=0; $i < 101; $i++) { 
+for ($i=0; $i < 100; $i++) { 
     $metimas = rand(0, 1);
     echo "$metimas";
     echo "<br>";
