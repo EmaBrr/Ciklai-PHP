@@ -112,7 +112,7 @@ echo "<h3>Šešta užduotis</h3>";
 $S = 0;
 $H = 0;
 
-for ($i=0; $i < 100; $i++) { 
+for ($i=0; true; $i++) { 
     $metimas = rand(0, 1);
     echo "$metimas";
     echo "<br>";
@@ -121,12 +121,23 @@ for ($i=0; $i < 100; $i++) {
         echo "<br>";
     } else {
         $H = $H + 1;
+        $H += 1;
+        $H++;
         if ($H != 0) {
             echo "Iškrito herbas - stabdom.";
             break;
         }
     };
 };
+
+// while(true){
+//     if(rand(0,1) == 0){
+//         echo "H";
+//         break;
+//     }
+//     echo "S";
+// }
+
 echo "<br>";
 echo "<br>";
 // b) Tris kartus iškritus herbui;
@@ -155,26 +166,26 @@ echo "<br>";
 echo "<br>";
 // c) Tris kartus iš eilės iškritus herbui;
 
-// $S1 = 0;
-// $H1 = 0;
-
-// for ($i=0; $i < 101; $i++) { 
-//     $metimas = rand(0, 1);
-//     echo "$metimas";
-//     echo "<br>";
-//     if ($metimas == 1) {
-//         echo "Skaičius";
-//         echo "<br>";
-//     } else {
-//         $H1 = $H1 + 1;
-//         echo "Herbas";
-//         echo "<br>";
-//         if ($H1 == 3) {
-//             echo "Herbas iškrito 3 kartus - stabdom.";
-//             break;
-//         }
-//     };
-// };
+$S1 = 0;
+$H1 = 0;
+for ($i=0; $i < 100; $i++) { 
+    $metimas = rand(0, 1);
+    echo "$metimas";
+    echo "<br>";
+    if ($metimas == 1) {
+        echo "Skaičius";
+        $H = 0;
+        echo "<br>";
+    } else {
+        $H1 = $H1 + 1;
+        echo "Herbas";
+        echo "<br>";
+        if ($H1 == 3) {
+            echo "Herbas iškrito 3 kartus - stabdom.";
+            break;
+        }
+    };
+};
 
 
 ?>
